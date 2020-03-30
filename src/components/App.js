@@ -29,37 +29,32 @@ class App extends React.Component {
 
     state = {
         pages: {
-            '/': {
-                title: 'Главная',
-                component: Main,
-                exact: true
-            },
-            '/employers/': {
-                title: 'Сотрудники',
-                component: EmployerList,
-                firmOnly: true,
-                exact: true
-            },
-            '/employers/add/': {
-                title: 'Добавить сотрудника',
+            '/employers/edit/:employerId': {
+                title: 'Редактирование сотрудника',
                 component: EmployerForm,
                 firmOnly: true,
-                exact: true
+                hideMenu: true
             },
             '/employers/view/:employerId': {
                 title: 'Информация о сотруднике',
                 component: EmployerInfo,
                 firmOnly: true,
-                exact: true,
                 hideMenu: true
             },
-            '/employers/edit/:employerId': {
-                title: 'Редактирование сотрудника',
+            '/employers/add/': {
+                title: 'Добавить сотрудника',
                 component: EmployerForm,
                 firmOnly: true,
-                exact: true,
-                hideMenu: true
-            }
+            },
+            '/employers/': {
+                title: 'Сотрудники',
+                component: EmployerList,
+                firmOnly: true,
+            },
+            '/': {
+                title: 'Главная',
+                component: Main,
+            },
         },
         employers: {}
     };
